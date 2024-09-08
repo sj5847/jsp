@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글보기</title>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;            
+            font: normal 12px '돋움';
+        }
+
+        ul, ol {list-style: none;}
+        a {text-decoration: none; color: #111;}
+
+        #wrapper {
+        width: 100%;
+        height: 100%;         
+        }
+
+        .container {
+        position: relative;
+        width: 1920px;
+        height: 1086px;
+        margin: 0 auto;
+        background: #FFFFFF;
+
+        }
+
+        header{
+
+        position: absolute;
+        width: 800px;
+        height: 35px;
+        left: 560px;
+        right: 560px;
+        top: 0px;
+
+        }
+
+       header > div > div  {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 10px;
+        }
+
+        .BS {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 12px;
+        align-items: center;
+
+        color: #000000;
+        }
+
+        .NY {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 12px;
+        align-items: center;
+        color: #000000;
+        }
+
+
+
+
+
+
+        main >section {
+
+        position: absolute;
+        width: 800px;
+        height: 896px;
+        left: calc(50% - 800px/2);
+        top: 95px;
+ 
+
+        }
+        .viewpost{
+        position: absolute;
+        height: 47px;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+
+
+        }
+        .viewpost div{
+        position: absolute;
+        width: 36.2px;
+        height: 14px;
+        left: 0px;
+        top: 21px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+
+        color: #000000;
+        }
+
+        .middle > article{
+        box-sizing: border-box;
+
+        position: absolute;
+        width: 800px;
+        height: 409px;
+        left: 0px;
+        right: 0px;
+        top: 47px;
+
+        border-top: 1px solid #111111;
+
+        }
+
+        .middle > article > .row1{
+            position: absolute;
+            width: 800px;
+            height: 51.5px;
+            left: 0px;
+            top: calc(50% - 51.5px/2 - 178px);
+
+        }
+        .middle > article > .row2{
+            position: absolute;
+            width: 800px;
+            height: 51px;
+            left: 0px;
+            top: calc(50% - 51px/2 - 126.75px);
+
+
+        }
+        .middle > article > .row3{
+            position: absolute;
+            width: 800px;
+            height: 305px;
+            left: 0px;
+            top: calc(50% - 305px/2 + 51.25px);
+
+        }
+        .middle > article > .row1 > .label1{
+            box-sizing: border-box;
+            position: absolute;
+            width: 112px;
+            height: 51.5px;
+            left: 0px;
+            top: calc(50% - 51.5px/2);
+            background: #F5F8F9;
+            border-bottom: 1px solid #E9E9E9;
+            
+        }
+
+        .middle > article > .row2 > .label2{
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 112px;
+            height: 51px;
+            left: 0px;
+            top: calc(50% - 51px/2);
+
+            background: #F5F8F9;
+            border-bottom: 1px solid #E9E9E9;
+
+
+        }
+        .middle > article > .row3 > .label3{
+            box-sizing: border-box;
+                    
+            position: absolute;
+            width: 112px;
+            height: 305px;
+            left: 0px;
+            top: calc(50% - 305px/2);
+                    
+            background: #F5F8F9;
+            border-bottom: 1px solid #E9E9E9;
+
+
+
+        }
+        .middle > article > .row1 > .label1 > div{
+            position: absolute;
+            width: 24.2px;
+            height: 14px;
+            left: 44px;
+            top: calc(50% - 14px/2 - 0.25px);
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #000000;
+
+        }
+
+        .middle > article > .row2 > .label2 > div{
+            position: absolute;
+            width: 24.2px;
+            height: 14px;
+            left: 44px;
+            top: calc(50% - 14px/2 - 0.25px);
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #000000;
+
+            
+        }
+
+        .middle > article > .row3 > .label3 > div{
+            position: absolute;
+            width: 24.2px;
+            height: 14px;
+            left: 44px;
+            top: calc(50% - 14px/2 - 0.25px);
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #000000;
+
+        }
+
+        .middle > article > .row1 > .label1-1 {
+            box-sizing: border-box;
+            position: absolute;
+            width: 688px;
+            height: 51.5px;
+            left: 112px;
+            top: calc(50% - 51.5px/2);
+            border-top: 1px solid black;
+            border-bottom: 1px solid #E9E9E9;
+        }
+        .middle > article > .row2 > .label2-1{
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 688px;
+            height: 51px;
+            left: 112px;
+            top: calc(50% - 51px/2);
+
+            border-bottom: 1px solid #E9E9E9;
+        }
+        .middle > article > .row3 > .label3-1{
+            box-sizing: border-box;
+            position: absolute;
+            width: 688px;
+            height: 305px;
+            left: 112px;
+            top: calc(50% - 305px/2);
+            border-bottom: 1px solid #E9E9E9;
+        }
+        
+
+        .middle > article > .row1 > .label1-1 > .title {
+
+            position: absolute;
+            width: 400px;
+            height: 24px;
+            left: 10px;
+            top: 14px;
+
+            background: #FFFFFF;
+
+
+
+        }
+        .middle > article > .row1 > .label1-1 > .title  >div{
+            position: absolute;
+            width: 63.2px;
+            height: 14px;
+            left: 0px;
+            top: 1px;        
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            color: #000000;
+        }
+
+        .middle > article > .row2 > .label2-1 >a{
+            position: absolute;
+            width: 215.22px;
+            height: 14px;
+            left: 10px;
+            top: 18px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            color: #111111;
+            white-space: nowrap;
+
+
+        }
+
+
+
+        .middle > article > .row3 > .label3-1 textarea{
+            position: absolute;
+            height: 280px;
+            left: 10px;
+            right: 10px;
+            top: 10.5px;
+
+            background: #FFFFFF;
+            border: white;
+     
+            resize: none;
+        }
+
+        .buttons button {
+          border: none;
+          cursor: pointer;
+        }
+
+        .buttons .delete{
+             box-sizing: border-box;
+            position: absolute;
+             width: 42px;
+             height: 35px;
+             right: 90px;
+             top: 466px;
+             border: 1px solid #BEBEBE;
+             background-color: white;
+
+        }
+        .buttons .delete > div{
+            position: absolute;
+            width: 24.2px;
+            height: 14px;
+            right: 8.8px;
+            top: 10px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #111111;
+
+
+        }
+        .buttons .edit {
+            box-sizing: border-box;
+            position: absolute;
+            width: 42px;
+            height: 35px;
+            right: 45px;
+            top: 466px;
+            border: 1px solid #BEBEBE;
+            background-color: white;
+
+        }
+        .buttons .edit > div {
+            position: absolute;
+            width: 24.2px;
+            height: 14px;
+            right: 8.8px;
+            top: 10px;              
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #111111;
+
+
+        }
+
+        .buttons .list {
+            box-sizing: border-box;                  
+            position: absolute;
+            width: 42px;
+            height: 35px;
+            right: 0px;
+            top: 466px;
+            border: 1px solid #BEBEBE;
+            background-color: white;
+
+        }
+        .buttons .list > div{
+            position: absolute;
+            width: 24.2px;
+            height: 14px;
+            right: 8.8px;
+            top: 10px;
+                    
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+                    
+            color: #111111;
+
+
+        }
+        .middle > .middle2{
+            box-sizing: border-box;
+            position: absolute;
+            height: 197px;
+            left: 0px;
+            right: 0px;
+            top: 511px;
+
+            background: #F9F9F9;
+            border: 1px solid #E3E3E3;
+
+        }
+        .middle > .middle2 .commentlist{
+            box-sizing: border-box;
+            position: absolute;
+            width: 766px;
+            height: 25px;
+            left: 17px;
+            right: 17px;
+            top: 17px;
+            border-bottom: 1px dashed #111111;
+
+        }
+
+        .middle >.middle2 .commentlist> div{
+            position: absolute;
+            width: 52.2px;
+            height: 15px;
+            left: 0px;
+            top: 1px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 13px;
+            line-height: 16px;
+            display: flex;
+            align-items: center;
+
+            color: #000000;
+
+        }
+        .middle >.middle2 .commentsample {
+            position: absolute;
+            width: 766px;
+            height: 71px;
+            left: 17px;
+            right: 17px;
+            top: 52px;
+
+
+        }
+        .middle >.middle2 .commentsample > div:nth-child(1){
+            position: absolute;
+            width: 83.2px;
+            height: 14px;
+            left: 0px;
+            top: 1px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 10.875px;
+            line-height: 13px;
+            /* identical to box height */
+            display: flex;
+            align-items: center;
+
+            color: #000000;
+
+
+        }
+
+        .middle >.middle2 .commentsample > div:nth-child(2){
+            position: absolute;
+            width: 93.2px;
+            height: 14px;
+            left: 10px;
+            top: 28px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            color: #000000;
+            white-space: nowrap;
+        }.middle >.middle2 .commentsample > div:nth-child(3){
+            position: absolute;
+            width: 129.2px;
+            height: 25px;
+            left: calc(50% - 129.2px/2 + 0.1px);
+            top: 83px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #000000;
+            white-space: nowrap;
+
+
+        }
+
+        .middle >.middle2 .commentsample >a {
+            position: absolute;
+            width: 51.2px;
+            height: 14px;
+            left: 715px;
+            top: 55px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            color: #111111;
+            white-space: nowrap;
+        }
+
+        .middle > .middle3{
+            box-sizing: border-box;
+            position: absolute;
+            height: 178px;
+            left: 0px;
+            right: 0px;
+            top: 718px;
+            background: #F9F9F9;
+            border: 1px solid #E3E3E3;
+
+        }
+
+        .middle > .middle3 .headwrite{
+            box-sizing: border-box;
+            position: absolute;
+            height: 25px;
+            left: 17px;
+            right: 17px;
+            top: 17px;
+            border-bottom: 1px dashed #111111;
+
+        }
+        .middle > .middle3 .headwrite > div{
+            position: absolute;
+            width: 52.2px;
+            height: 15px;
+            left: 0px;
+            top: 1px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 13px;
+            line-height: 16px;
+            display: flex;
+            align-items: center;
+            color: #000000;
+        }
+        .middle > .middle3 .commentwrite {
+            position: absolute;
+            width: 766px;
+            height: 64px;
+            left: 17px;
+            right: 17px;
+            top: 52px;
+        }
+
+        .middle > .middle3 > .commentwrite textarea{
+            box-sizing: border-box;
+            position: absolute;
+            height: 60px;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            background: #FFFFFF;
+            border: white;
+            resize: none;
+
+        }
+        .buttons2 button {
+          border: none;
+          cursor: pointer;
+        }
+        
+        .middle > .middle3 > .buttons2 .cancel{
+            box-sizing: border-box;
+            position: absolute;
+            width: 42px;
+            height: 35px;
+            left: 675px;
+            top: 124px;
+            border: 1px solid #BEBEBE;
+            background-color: white;
+
+        }
+        .middle > .middle3 > .buttons2 .cancel >div{
+            position: absolute;
+            width: 24.2px;
+            height: 14px;
+            left: 9px;
+            top: 10px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #111111;
+
+
+        }
+        .middle > .middle3 > .buttons2 .submit{
+            box-sizing: border-box;
+            position: absolute;
+            width: 66px;
+            height: 35px;
+            left: 720px;
+            top: 124px;
+            background: #4B545E;
+            border: 1px solid #3B3C3F;
+
+        }
+        .middle > .middle3 > .buttons2 .submit> div{
+            position: absolute;
+            width: 48.2px;
+            height: 14px;
+            left: 9px;
+            top: 10px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+                    
+            color: #FFFFFF;
+
+
+        }
+   
+
+      
+    
+
+        footer{
+        position: absolute;
+        width: 790px;
+        height: 17px;
+        left: 560px;
+        right: 570px;
+        top: 1051px;
+
+        }
+
+        footer > div .cr{
+        position: absolute;
+        width: 182.87px;
+        height: 14px;
+        left: 0px;
+        top: 1px;
+        
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+
+        color: #777777;
+        white-space: nowrap;
+
+
+        }
+
+        footer > div .v{
+        position: absolute;
+        width: 30.2px;
+        height: 14px;
+        left: 760px;
+        top: 0px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+
+        color: #777777;
+
+
+        }
+
+    
+        
+
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="container">
+    <header>
+       <div>
+        <div>
+            <div class="BS">Board System</div>
+            <div class="NY">
+                홍길동님 반갑습니다. <a href="#">[로그아웃]</a>
+            </div>
+
+        </div>
+       </div>
+    </header>
+    <main>
+        <section class="middle">
+            <div class="viewpost"><div>글보기</div></div>
+            <article>
+                <div class="row1">
+                    <div class="label1"><div>제목</div></div>
+                    <div class="label1-1"><div class="title"><div>제목입니다.</div></div></div>
+                </div>
+                <div class="row2">
+                    <div class="label2"><div>파일</div></div>
+                    <div class="label2-1"><a href="#">2020년 상반기 매출자료.xls 7회 다운로드</a></div>
+                </div>
+                <div class="row3">
+                    <div class="label3"><div>내용</div></div>
+                    <div class="label3-1"><textarea placeholder=""></textarea></div>
+                </div>
+            </article>
+            <div class="buttons">
+                <button class="delete"><div>삭제</div></button>
+                <button class="edit"><div>수정</div></button>
+                <button class="list"><div>목록</div></button>
+            </div>
+            <article class="middle2">
+                <div class="commentlist"><div>댓글목록</div></div>
+                <div class="commentsample">
+                    <div>길동이 20-05-20</div>
+                    <div>댓글 샘플 입니다.</div>                  
+                    <div>등록된 댓글이 없습니다.</div>
+                    <a href="#">삭제 수정</a>
+                </div>
+            </article>
+            <article class="middle3">
+                <div class="headwrite"><div>댓글쓰기</div></div>
+                <div class="commentwrite"><textarea placeholder=""></textarea></div>
+                <div class="buttons2">
+                    <button class="cancel"><div>취소</div></button>
+                    <button class="submit"><div>작성완료</div></button>
+                </div>
+            </article>
+           
+        </section>
+    
+    </main>
+    <footer>
+        <div>
+            <div id="ft">
+                <p class="cr">Copyrightⓒ 김철학(개발에반하다.)</p>
+                <p class="v">v1.0.1</p>
+            </div>
+        </div>
+    </footer>
+</div>
+</div>
+</body>
+</html>

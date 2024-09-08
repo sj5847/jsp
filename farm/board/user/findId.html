@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디 찾기</title>
+<style>
+  
+  * {
+        margin: 0;
+        padding: 0;
+        font: normal 12px '고딕';
+    }
+    
+    ul, ol {list-style: none;}
+    a {text-decoration: none; color: #111;}
+    input, textarea {outline: none;}
+    /*border 있는게 css할 때 편해서 들어있는거라 없애셔도 됩니다 안없애셔두 돼요!*/
+    /*wrapper container main height 수정해서 작업해주세요!*/
+    #wrapper {
+        width :1920px;
+        height : 490px;
+        margin : 0 auto;
+    }
+    .container {
+        width : 790px;
+        height : 490px;
+        box-sizing: border-box;
+        margin : 0 auto;
+    }
+    header {
+        width : 100%;
+        height : 20px;
+        box-sizing: border-box;
+        position : relative;  top: 10px ;
+    }
+    .boardsystem {
+        margin-top : 0;
+        font-size : 10px;
+        width: 68px;
+        height: 14px;
+        color: #000000;
+    }
+    main {
+        width : 100%;
+        height :450px;
+        box-sizing: border-box;
+        position: relative;
+        top: 10px;
+    }
+    section {
+        width: 600px;
+        height: 286px;
+        margin: 0 auto;
+        margin-top: 95px;
+         box-sizing: border-box;
+    }
+    h2 {
+        width: 100px;
+        height: 14px;
+        size: 12px;
+        margin: 5px;
+        font-weight: bold;
+    }
+    hr {
+        border: solid 1px black;
+    }
+    .table {
+        width: 600px;
+        height: 150px;
+    }
+    .table > div:nth-child(1){
+        width: 120px;
+        height: 49px;
+        border : 1px solid #e9e9e9;
+        box-sizing: border-box;
+        position: relative;
+    }
+    .table > div:nth-child(2) {
+        width: 479px; 
+        height: 49px;
+        border : 1px solid #e9e9e9;
+        box-sizing: border-box;
+        position: relative; left: 120px; bottom: 49px;
+    }
+    .table > div:nth-child(3) {
+        width: 120px; 
+        height: 87px;
+        border : 1px solid #e9e9e9;
+        box-sizing: border-box;
+        position: relative; bottom: 49.5px;
+    }
+    .table > div:nth-child(4) {
+        width: 479px; 
+        height: 87px;
+        border : 1px solid #e9e9e9;
+        box-sizing: border-box;
+        position: relative; left:120px; bottom: 136.5px;
+    }
+    .name {
+        width: 24px;
+        height: 14px;
+        position: absolute;
+        top: 16px;
+        left: 14px;
+        font-weight: bold;
+    }
+    .nametext {
+        width: 164px;
+        height: 24px;
+        position: absolute;
+        top: 10px;
+        left: 14px;
+        padding-left: 7px;
+        font-weight: bold;
+        background-color: #f7f7f7; 
+        border: 1px solid #e4eaec;
+    }
+    .email {
+        width: 36px; 
+        height: 14px;
+        position: absolute;
+        top: 33px;
+        left: 14px;
+        box-sizing: border-box;
+        font-weight: bold;
+    }
+    .emailtext {
+        width: 164px;
+        height: 24px;
+        position: absolute;
+        top: 12px;
+        left: 14px;
+        padding-left: 7px;
+        font-weight: bold;
+        background-color: #f7f7f7; 
+        border: 1px solid #e4eaec;
+    }
+    .getCodeBtn {
+        width: 85px;
+        height: 26px;
+        position: absolute;
+        top: 12px;
+        left: 190px;
+        font-weight: bold;
+        border: 1px solid #bebebe;
+    }
+    .verificationCodetext {
+        width: 164px;
+        height: 24px;
+        position: absolute;
+        top: 45px;
+        left: 14px;
+        padding-left: 7px;
+        font-weight: bold; 
+        background-color: #f7f7f7; 
+        border: 1px solid #e4eaec; 
+    }
+    .verificationCode {
+        width: 34px;
+        height: 26px;
+        position: absolute;
+        top: 45px;
+        left: 190px;
+        font-weight: bold;
+        border: 1px solid #bebebe;
+    }
+    .note{
+        font-weight: bold;
+    }
+    .bottom {
+        position: relative;
+        top: 20px;
+        width: 100%;
+        height: 20px;
+        margin-top: 58px ;
+    }
+    .cancelBtn {
+        width: 42px;
+        height: 35px;
+        font-size: 12px;
+        position: absolute;
+        right: 44px;
+        bottom: 0px;
+        justify-content: center;
+        border: 1px solid #bebebe;
+        background-color: white;
+        cursor: pointer;
+        margin-right: 2px;
+    }
+    .nextBtn {
+        width: 42px;
+        height: 35px;
+        position: absolute;
+        right: 1px;
+        bottom: 0px;
+        justify-content: center;
+        border: 1px solid #bebebe;
+        background-color: white;
+        cursor: pointer;
+    }
+    footer {
+        width : 100%;
+        height : 20px;
+         box-sizing: border-box;
+        position : relative;     
+        bottom: 20px;        
+    }
+    .copyright{
+        position :absolute;
+        left : 0;
+        bottom: 0;
+        color: #777777;
+    }    
+    .version {
+        position : absolute;
+        right :0;
+        width: 30px;
+        height: 14px;
+        color: #777777;
+    }
+</style>
+
+</head>
+<body>
+    <div id = wrapper>
+        <div class =container>
+        <header>
+            <h3 class = "boardsystem">Board System</h3>
+        </header>
+        <main>
+            <section>
+                <h2>아이디 찾기</h2>
+                <hr>
+                <div class="table">
+                    <div>
+                        <label class="name" for="name">이름</label>
+                    </div>
+                    <div>
+                        <input class="nametext" type="text" placeholder="이름 입력">
+                    </div>
+                    <div>
+                        <label class="email" for="email">이메일</label>
+                    </div>
+                    <div>
+                        <input class="emailtext" type="email" placeholder="이메일 입력">
+                        <button class="getCodeBtn">인증번호 받기</button>
+                        <input class="verificationCodetext" type="text" placeholder="인증번호 입력">
+                        <button class="verificationCode">확인</button>
+                    </div>
+                </div>
+                <div class="note">
+                    회원가입시 이메일 주소와 입력한 이메일 주소가 같아야, 인증번호를 받을 수 있습니다. 
+                    </br>인증번호를 입력 후 확인 버튼을 누르세요.
+                </div>
+                <div class="bottom">
+                    <button class="cancelBtn">취소</button>
+                    <button class="nextBtn">다음</button>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <span class ="copyright">Copyrightⓒ 김철학(개발에반하다.)</span>
+            <span class = "version">v.1.0.1</span>
+        </footer>
+    </div>
+    </div>
+
+    
+</body>
+</html>
+

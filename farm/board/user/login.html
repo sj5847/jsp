@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+<style>
+  
+  * {
+        margin: 0;
+        padding: 0;
+        font: normal 12px '고딕';
+    }
+    
+    ul, ol {list-style: none;}
+    a {text-decoration: none; color: #111;}
+    input, textarea {outline: none;}
+    /*border 있는게 css할 때 편해서 들어있는거라 없애셔도 됩니다 안없애셔두 돼요!*/
+    /*wrapper container main height 수정해서 작업해주세요!*/
+    #wrapper {
+        width : 100%;
+        height : 775px;
+        box-sizing: border-box;
+        margin : 0 auto;
+    }
+    .container {
+        width : 790px;
+        height : 775px;
+        box-sizing: border-box;
+        margin : 0 auto;
+    }
+    header {
+        width : 100%;
+        height : 20px;
+        position : relative;
+        
+    }
+    .boardsystem {
+        margin-top : 0;
+        font-size : 15px;
+
+    }
+
+    /******************************* main *******************************/
+
+    main {
+        width : 100%;
+        height :585px;
+        position: relative;
+    }
+
+    main > section {
+
+        width: 360px;
+        height: 222px;
+        border: 1px solid #cfded8;
+        box-sizing: border-box;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+
+    table {
+        position: absolute;
+        top: 31px;
+        left: 53px;
+    }
+
+    img {
+        width: 20px;
+        height: 17px;
+        margin-right: 5px;
+    }
+
+    .input {
+        width: 164px;
+        height: 24px;
+        border: 1px solid #e4eaec;
+        box-sizing: border-box;
+        background-color: #f7f7f7;
+        color: gray;
+    }
+
+    .guide {
+        width: 358px;
+        height: 104px;
+        border-top: 1px solid #cfded8;
+        box-sizing: border-box;
+        background-color: #f5f6fa;
+        position: absolute;
+        top: 116px;
+    }
+
+    .guide > h3 {position: absolute; top: 20px; left: 22px; font-weight: bold;}
+    .guide > p {position: absolute; top: 49px; left: 20px; font-weight: bold;}
+    .guide > a {position: absolute; top: 76px; left: 165px; font-weight: bold;}
+
+    .login {
+        width: 60px;
+        height: 52px;
+        border: 1px solid #bebebe;
+        background-color: #fdfdfd;
+        position: absolute;
+        top: 31px;
+        left: 249px;
+        margin-left: 3px;
+        font-weight: bold;
+    }
+
+    /******************************* footer *******************************/
+
+    footer {
+        width : 100%;
+        height : 20px;
+        position : relative;        
+    }
+    .copyright {
+        position :absolute;
+        left : 0;
+    }
+    .version {
+        position : absolute;
+        right :0;
+    }
+    footer > span {
+        color: #777777;
+    }
+</style>
+
+</head>
+<body>
+    <div id = wrapper>
+        <div class =container>
+        <header><h3 class = "boardsystem">Board System</h3></header>
+        <main>
+
+            <section class="">
+                <div>
+                    <form action="" class="form">
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="../img/login_ico_id.png" alt="아이디">
+                                </td>
+                                <td>
+                                    <input type="text" placeholder="아이디 입력" class="input">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="../img/login_ico_pw.png" alt="비밀번호">
+                                </td>
+                                <td>
+                                    <input type="text" placeholder="비밀번호 입력" class="input">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+
+                <div class="guide">
+                    <h3>회원 로그인 안내</h3>
+                    <p>아직 회원이 아니시면 회원으로 가입하세요.</p>
+                    <a href="#">아이디 | 비밀번호찾기 | 회원가입</a>
+                </div>
+
+                <div>
+                    <input type="submit" value="로그인" class="login">
+                </div>
+            </section>
+        </main>
+        <footer>
+            <span class ="copyright">Copyrightⓒ 김철학(개발에반하다.)</span>
+            <span class = "version">v.1.0.1</span>
+        </footer>
+        </div>
+    </div>
+
+    
+</body>
+</html>

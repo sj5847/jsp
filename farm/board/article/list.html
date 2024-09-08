@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+  
+  * {
+        margin: 0;
+        padding: 0;
+        font: normal 12px '고딕';
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+    }
+    
+    ul, ol {list-style: none;}
+    a {text-decoration: none; color: #111;}
+    input, textarea {outline: none;}
+
+    #wrapper {
+        width :1920px;
+        height : 370px;
+        overflow-y : scroll;
+        background-color : #ffffff;
+        position : relative;
+    }
+    .container {
+        width : 800px;
+        height : 100%;
+
+        margin : 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    header {
+        height : 35px;
+        position : relative;
+        left : 0px;
+        top : 0px;
+    }
+    header > .boardsystem{ position :absolute; left: 0;}
+    header > .higildong { position : absolute; right : 0;}
+    header > h3 {
+                
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10.125px;
+        line-height: 12px;
+        display: flex;
+        align-items: center;
+
+        color: #000000;
+    }
+    header > p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+
+        color: #000000;
+    }
+    main > section {
+        position: absolute;
+        width: 800px;
+        height: 180px;
+        top : 80px;
+        left: calc(50% - 800px/2);
+    }
+  
+    nav {
+        position: absolute;
+        height: 51px;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+    }
+
+    nav > p {
+        position: absolute;
+        width: 36px;
+        height: 14px;
+        left: 0px;
+        top: 10px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        color: #000000;
+    }
+
+ 
+    form {
+        position: absolute;
+        width : 243px;
+        height: 31px;
+        right: 0px;
+        top: 10px;
+    }
+
+    #search > input {
+        box-sizing: border-box;
+        width: 202px;
+        height: 28px;
+        position : absolute;
+        left: 0px;
+        top: 1.5px;
+        background: #FFFFFF;
+        border: 1px solid #D7D7D7;       
+    }
+    
+    input[type="text"]::placeholder{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        text-align: left;
+    }
+
+    form > #searchbtn {
+        
+        width : 38px;
+        height : 31px;
+        float : right;
+        background: #F2F2F2;
+        border: 1px solid #D7D7D7;
+    }
+    button#searchbtn {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+
+        color: #111111;
+    }
+
+    table {
+
+        width: 800px;
+        height: 84px;
+        border-collapse: collapse;
+        position: absolute;
+        height: 84px;
+        left: 0px;
+        right: 0px;
+        top: 51px;
+        border-top: 2px solid #111111;
+    }
+
+    table > tbody> tr:nth-child(1) {
+
+        box-sizing: border-box;
+        position: relative;
+        width: 78.69px;
+        height: 41.5px;
+        left: 0px;
+        top: calc(50% - 41.5px/2);
+        background: #E5ECEF;
+        border-bottom: 1px solid #D1DEE2;
+
+    }
+    table > tbody> tr:nth-child(1) >th {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        align-items: center;
+        text-align: center;
+    }
+    table > tbody > tr:nth-child(2) >th:nth-child(2){
+        text-align: left;
+    }
+    table > tbody {
+        border-bottom: 1px solid #E9E9E9;
+    
+    }        
+    button {
+        justify-content: center;
+        border: 1px solid #BEBEBE;
+        background-color: white;
+        cursor: pointer;
+    }
+
+    .buttons {
+        width : 100%;
+        height : 35px;
+        position : absolute;
+        bottom : 0;
+    }
+
+    .buttons > button {
+        height : 33px;
+
+
+    }
+    .buttons > button:nth-child(1){
+        width : 42px; 
+        height: 35px;
+        position : absolute;
+        left : 291px;  
+        background-color: #F2F2F2; 
+        border : 1px solid #D7D7D7;
+    }
+    .buttons > button:nth-child(2){
+        width : 23px; 
+        background-color: #888888; 
+        border : 1px solid #D7D7D7;
+        position : absolute;
+        left : 335px; 
+        top : 1.5px;
+        color :white;
+
+    }
+    .buttons > button:nth-child(3){
+        width : 23px; 
+        background-color: #F2F2F2; 
+        border : 1px solid #D7D7D7;
+        position : absolute;
+        left : 359px; 
+        top : 1.5px;}
+    .buttons > button:nth-child(4){
+        width : 23px;  
+        background-color: #F2F2F2;
+         border : 1px solid #D7D7D7;
+        position : absolute;
+        left : 384px; 
+        top : 1.5px;}
+    .buttons > button:nth-child(5){
+        width : 42px; 
+        height: 35px; 
+        background-color: #F2F2F2; 
+        border : 1px solid #D7D7D7;
+        position : absolute;
+        left : 409px; 
+        }
+    
+    .buttons > button:nth-child(6){
+        width : 54px; 
+        height: 35px; 
+        background-color: #4B545E; 
+        border : 1px solid #3B3C3F;
+        float: right;
+
+        color : white;
+    }
+    .boardsystem {
+        margin-top : 0;
+        font-size : 15px;
+
+    } 
+    footer {
+        position : absolute;
+        width : 100%;
+        height : 17px;
+        bottom : 5px;
+    }
+    footer > p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        color: #777777;
+    }
+    .copyright {
+        position :absolute;
+        left : 0;
+    }
+    .version {
+        position : absolute;
+        right :5px;
+    }
+</style>
+
+</head>
+<body>
+    <div id = wrapper>
+        <div class =container>
+        <header>
+            <h3 class = "boardsystem">Board System</h3>
+            <p class = "higildong">홍길동님 반갑습니다. <a href = "#">[로그아웃]</a></p>
+        </header>
+        <main>
+            <section>
+                <nav>     
+                    <p>글목록</p>
+
+                    <form id="search">
+                    <input type="text" name="text" placeholder="제목 키워드, 글쓴이 검색">
+                    <button id="searchbtn" type = "submit" value = "검색">검색</button>
+                    </form>
+                </nav>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>글쓴이</th>
+                            <th>날짜</th>
+                            <th>조회</th>
+                        </tr>
+                        <tr>
+                            <th>1</th>
+                            <th>테스트 제목입니다.[3]</th>
+                            <th>길동이</th>
+                            <th>20-05-12</th>
+                            <th>12</th>  
+                        </tr>
+                    </tbody> 
+                </table>   
+                    <div class="buttons">
+                        <button type = "button" class = "btn1">이전</button>
+                        <button type = "button" class = "btn2">1</button>
+                        <button type = "button" class = "btn3">2</button>
+                        <button type = "button" class = "btn4">3</button>
+                        <button type = "button" class = "btn5">다음</button>
+                        <button type = "button" class = "btn6">글쓰기</button>
+                    </div>                
+
+            </section>
+        </main>
+        <footer>
+            <p class ="copyright">Copyrightⓒ 김철학(개발에반하다.)</p>
+            <p class = "version">v.1.0.1</p>
+        </footer>
+    </div>
+    </div>
+
+    
+</body>
+</html>
